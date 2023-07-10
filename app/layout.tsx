@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
 import RegisterModal from "./components/modals/RegisterModal";
+import ToasterProvider from "./providers/ToasterProvider";
+import { Toaster } from "react-hot-toast";
 
 const font = Nunito({ subsets: ["latin"] });
 
@@ -21,6 +23,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={font.className}>
                 <ClientOnly>
+                    <Toaster />
                     <RegisterModal />
                     <Navbar />
                 </ClientOnly>
